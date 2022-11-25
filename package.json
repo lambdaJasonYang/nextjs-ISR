@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "standalonebuild": "cp -r .next/static .next/standalone/.next && cp -r public .next/standalone/.next",
+    "execstandalone" : "node .next/standalone/server.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run standalone",
     "start": "next start",
     "lint": "next lint"
   },
